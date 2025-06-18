@@ -28,7 +28,7 @@ function App() {
             <p className="text-lg text-gray-700 mb-6 ">I’m a Front-end Web developer passionate about building responsive and modern web apps.</p>
             <a href="#projects" className="bg-blue-600 text-white px-5 py-3 rounded-xl hover:bg-blue-700 duration-200">See My Work</a>
           </div>
-          <img src='.\src\Images\ShivamKumar.jpg' alt="Shivam Kumar" className="max-sm:mt-[9vw] rounded-xl shadow-md max-sm:max-w-[55vw] sm:max-w-[25vw] inline-flex self-end hover:scale-105 duration-150 " />
+          <img src="./src/Images/ShivamKumar.jpg" alt="Shivam Kumar" className="max-sm:mt-[9vw] rounded-xl shadow-md max-sm:max-w-[55vw] sm:max-w-[25vw] inline-flex self-end hover:scale-105 duration-150 " />
         </div>
       </section>
 
