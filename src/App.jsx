@@ -1,8 +1,11 @@
 import './App.css'
 
 function App() {
+  //This Variable is use for showing projects.
+  const projectLinks = [{title: 'Famous food of 5 countries', link: 'https://famousmeals.netlify.app/', working:'It is a website that use data from API for showing results.'},]
 
-  const projectLinks = [{title: 'Famous food of 5 countries', link: 'https://github.com/git-shiivu/mealMenu.git', working:'It is a website that use data from API for showing results.'},]
+  //This Variable is use for showing skills.
+  const skills = ["HTML:5","CSS","Javascript","ReactJS","Redux","React-Router","C Programing Language", "MySQL", "Tailwind CSS"]
   
   return (
     <div className=" text-gray-800">
@@ -17,8 +20,7 @@ function App() {
           </nav>
         </div>
       </header>
-
-      
+     
 
       {/* Profile Section */}
       <section className="bg-gradient-to-r from-blue-100 to-white py-[5vh] px-4">
@@ -28,7 +30,7 @@ function App() {
             <p className="text-lg text-gray-700 mb-6 ">I’m a Front-end Web developer passionate about building responsive and modern web apps.</p>
             <a href="#projects" className="bg-blue-600 text-white px-5 py-3 rounded-xl hover:bg-blue-700 duration-200">See My Work</a>
           </div>
-          <img  src='./src/Images/ShivamKumar.webp' alt="Shivam Kumar" className="max-sm:mt-[9vw] rounded-xl shadow-md max-sm:max-w-[55vw] sm:max-w-[25vw] inline-flex self-end hover:scale-105 duration-150 " />
+          <img  src='./src/Images/ShivamKumar.webp' alt="Image is unabilable" className="rounded-xl shadow-md max-sm:min-h-[20vh] max-sm:max-w-[55vw] max-sm:mt-[9vw] sm:min-h-[20vh] sm:max-w-[25vw] inline-flex self-center" />
         </div>
       </section>
 
@@ -39,6 +41,18 @@ function App() {
           <p className="text-gray-600 text-lg">
             I’m a developer with experience in React, Tailwind CSS, Javascript I enjoy turning ideas into real products and solving real-world problems through code.
           </p>
+        </div>
+      </section>
+
+      {/* Skills Section*/}
+      <section>
+        <div className='max-w-4xl mx-auto text-center'>
+          <h3 className="text-3xl font-semibold mb-4">Skills</h3>
+          <ol className='inline-flex flex-col flex-wrap'>
+            {skills.map(skill => (
+              <li className='min-w-[10vw]' key={skill}>{skill}</li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -53,9 +67,11 @@ function App() {
                 <h5 className="text-xl font-semibold mb-[2vh]">{i.title}</h5>
                 <hr />
                 <p className="text-gray-600 my-[2vh]">{i.working}</p>
-                <p className="text-gray-600 text-sm">
-                  <b>Git Hub: </b>
-                  <a href={i.link} target='_blank'>{i.link}</a></p>
+                <iframe src={i.link} frameborder="0" className='w-[100%] h-[50vh] border-2 rounded-[.3vw]'></iframe>
+                <p className="text-gray-600 text-sm mt-[2vh]">
+                  <b>Link : </b>
+                  <a href={i.link} target='_blank'>Want to visit???</a>
+                </p>
               </div>
             ))}
           </div>
