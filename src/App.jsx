@@ -8,18 +8,6 @@ function App() {
   //This Variable is use for showing skills.
   const skills = ["HTML:5","CSS","Javascript","ReactJS","Redux","React-Router","C Programing Language", "MySQL", "Tailwind CSS"]
   
-  
-  
-  // it is use for takeing User name.
-  const userName = () =>{
-    if(prompt("May you tell us your name??")){
-      let user = prompt("Hi, What is your name: ")
-      return user
-    } else{
-      return "User"
-    }
-  } 
-  
   return (
     <div className=" text-gray-800">
       {/* Navbar */}
@@ -39,11 +27,11 @@ function App() {
       <section className="bg-gradient-to-r from-blue-100 to-white py-[5vh] px-4">
         <div className="flex justify-around flex-wrap">
           <div >
-            <h2 className="text-4xl font-bold mb-4 max-sm:max-w-[100vw] sm:max-w-[50vw]">Hi {userName()}, I'm Shivam Kumar</h2>
+            <h2 className="text-4xl font-bold mb-4 max-sm:max-w-[100vw] sm:max-w-[50vw]">Hi Visitor, I'm Shivam Kumar</h2>
             <p className="text-lg text-gray-700 mb-6 ">I’m a Front-end Web developer passionate about building responsive and modern web apps.</p>
             <a href="#projects" className="bg-blue-600 text-white px-5 py-3 rounded-xl hover:bg-blue-700 duration-200">See My Work</a>
           </div>
-          <img  src="./Public/img/ShivamKumar.jpg" alt="Image is unavilable" className="rounded-xl shadow-md max-sm:min-h-[20vh] max-sm:max-w-[55vw] max-sm:mt-[9vw] sm:min-h-[20vh] sm:max-w-[25vw] inline-flex self-center" />
+          <img  src="https://ik.imagekit.io/shiivuishere/ShivamKumar.jpg?updatedAt=1750396536257" alt="Image is unavilable" className="rounded-xl shadow-md max-sm:min-h-[20vh] max-sm:max-w-[55vw] max-sm:mt-[9vw] sm:min-h-[20vh] sm:max-w-[25vw] inline-flex self-center" />
         </div>
       </section>
 
@@ -52,7 +40,7 @@ function App() {
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-3xl font-semibold mb-4">About Me</h3>
           <p className="text-gray-600 text-lg">
-            I’m a developer with experience in React, Tailwind CSS, Javascript I enjoy turning ideas into real products and solving real-world problems through code.
+            I’m a developer with experience in React, Tailwind CSS, Javascript. I enjoy turning ideas into real products and solving real-world problems through code.
           </p>
         </div>
         <div className='max-w-4xl mx-auto text-center mt-8'>
