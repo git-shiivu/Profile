@@ -3,7 +3,7 @@ import './App.css'
 function App() {
 
   //This Variable is use for showing projects.
-  const projectLinks = [{title: 'Famous food of 5 countries', link: 'https://famousmeals.netlify.app/', working:'It is a website that use data from API for showing results.'},]
+  const projectLinks = [{title: 'Famous food of 5 countries', link: 'https://famousmeals.netlify.app/', working:'It is a website that use data from API for showing results.'},{title: 'Calculator for small Calculations', link: 'https://calculatorfromshiivu.netlify.app/', working:'It is a Calculator, that can perform small calculations. Please enter values carefully.'},]
 
   //This Variable is use for showing skills.
   const skills = ["HTML:5","CSS","Javascript","ReactJS","Redux","React-Router","C Programing Language", "MySQL", "Tailwind CSS"]
@@ -59,7 +59,7 @@ function App() {
           <h3 className="text-3xl font-semibold text-center mb-10">Projects</h3>
           <div className="inline-flex justify-center flex-wrap ">
             {projectLinks.map(i => (
-              <div key={i} className="bg-white rounded-xl shadow-md p-5 max-sm:max-w-[100%] max-sm:min-h-[40%] sm:min-w-[20%] sm:min-h-[50%] m-[2vw] hover:scale-105 duration-150">
+              <div key={i} className="bg-white rounded-xl shadow-md p-5 max-sm:max-w-[100%] max-sm:min-h-[40%] sm:max-w-[40%] sm:min-h-[50%] m-[2vw] hover:scale-105 duration-150">
                 <h4 className="text-xl font-bold ">Project Title:</h4>
                 <h5 className="text-xl font-semibold mb-[2vh]">{i.title}</h5>
                 <hr />
