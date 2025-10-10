@@ -3,10 +3,10 @@ import './App.css'
 function App() {
 
   //This Variable is use for showing projects.
-  const projectLinks = [{title: 'Famous food of 5 countries', link: 'https://famousmeals.netlify.app/', working:'It is a website that use data from API for showing results.'},{title: 'Calculator for small Calculations', link: 'https://calculatorfromshiivu.netlify.app/', working:'It is a Calculator, that can perform small calculations. Please enter values carefully.'},]
+  const projectLinks = [{title: 'Dishes of 5 countries', link: 'https://famousmeals.netlify.app/', working:'It is a website that use data from API for showing results.'},{title: 'Calculator for small Calculations', link: 'https://calculatorfromshiivu.netlify.app/', working:'It is a Calculator, that can perform small calculations. Please enter values carefully.'},]
 
   //This Variable is use for showing skills.
-  const skills = ["HTML:5","CSS","Javascript","ReactJS","Redux","React-Router","C Programing Language", "MySQL", "Tailwind CSS"]
+  const skills = ["HTML:5","CSS","Javascript","ReactJS","Redux","React-Router","C Programing Language", "MySQL", "Tailwind CSS", "NodeJS"]
   
   return (
     <div className=" text-gray-800">
@@ -24,14 +24,13 @@ function App() {
      
 
       {/* Profile Section */}
-      <section className="bg-gradient-to-r from-blue-100 to-white py-[5vh] px-4">
-        <div className="flex justify-around flex-wrap">
+      <section className="bg-gradient-to-r from-blue-100 to-white py-[10vh] px-4">
+        <div className="min-sm:mx-[5%]">
           <div >
             <h2 className="text-4xl font-bold mb-4 max-sm:max-w-[100vw] sm:max-w-[50vw]">Hi Visitor, I'm Shivam Kumar</h2>
             <p className="text-lg text-gray-700 mb-6 ">I’m a Front-end Web developer passionate about building responsive and modern web apps.</p>
             <a href="#projects" className="bg-blue-600 text-white px-5 py-3 rounded-xl hover:bg-blue-700 duration-200">See My Work</a>
           </div>
-          <img  src="https://ik.imagekit.io/shiivuishere/ShivamKumar.jpg?updatedAt=1750396536257" alt="Image is unavilable" className="rounded-xl shadow-md max-sm:min-h-[20vh] max-sm:max-w-[55vw] max-sm:mt-[9vw] sm:min-h-[20vh] sm:max-w-[25vw] inline-flex self-center" />
         </div>
       </section>
 
@@ -55,19 +54,18 @@ function App() {
 
       {/* Projects Section */}
       <section id="projects" className="py-16 px-4 bg-gray-100">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-3xl font-semibold text-center mb-10">Projects</h3>
-          <div className="inline-flex justify-center flex-wrap ">
+        <div className="justify-center w-[100%]">
+          <h3 className="w-[100%] text-3xl font-semibold text-center mb-10">Projects</h3>
+          <div className="flex justify-center flex-wrap ">
             {projectLinks.map(i => (
-              <div key={i} className="bg-white rounded-xl shadow-md p-5 max-sm:max-w-[100%] max-sm:min-h-[40%] sm:max-w-[40%] sm:min-h-[50%] m-[2vw] hover:scale-105 duration-150">
-                <h4 className="text-xl font-bold ">Project Title:</h4>
-                <h5 className="text-xl font-semibold mb-[2vh]">{i.title}</h5>
+              <div key={i} className="bg-white rounded-xl shadow-md p-5 max-sm:w-[75%] min-sm:w-[30%] m-[2vw] hover:scale-105 duration-150">
+                <h4 className="text-xl">Title:</h4>
+                <p className="text-xl text-gray-600">{i.title}</p>
                 <hr />
-                <p className="text-gray-600 my-[2vh]">{i.working}</p>
-                <iframe src={i.link} className='w-[100%] h-[50vh] border-2 rounded-[.3vw]'></iframe>
+                <p className="text-gray-600 my-4">{i.working}</p>
                 <p className="text-gray-600 text-sm mt-[2vh]">
                   <b>Link : </b>
-                  <a href={i.link} target='_blank'>Want to visit???</a>
+                  <a href={i.link} className='hover:text-green-700 duration-150 ' target='_blank'>Want to visit???</a>
                 </p>
               </div>
             ))}
@@ -80,9 +78,9 @@ function App() {
       <section id="contact" className="py-16 px-4 bg-white">
         <div className="text-center">
           <h3 className="text-3xl font-semibold mb-4">Get in Touch</h3>
-          <p className="text-gray-600 mb-6">Interested in working together or just want to say hi?</p>
+          <p className="text-gray-600 mb-6">Interested in working together or just ask something?</p>
           <div>
-            <a href="https://www.instagram.com/shiivu.dev?igsh=MTVlbW83cmdjcXowcA==" target='_blank' className=" bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 duration-150">Visit on Instagram</a>
+            <a href='https://www.linkedin.com/in/shivam-kumar-5b4223357' target='_blank' className=" bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 duration-150">Visit on LinkedIn</a>
           </div>
           <p className="text-gray-600 my-[2vw]">Or</p>
           <div className=''>
