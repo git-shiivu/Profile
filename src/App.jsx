@@ -1,13 +1,23 @@
+import { useEffect, useState } from 'react';
 import './App.css'
 
 function App() {
+  const [data,setdata] = useState({})
+  useEffect(()=>{
 
-  //This Variable is use for showing projects.
-  const projectLinks = [{title: 'Dishes of 5 countries', link: 'https://famousmeals.netlify.app/', working:'It is a website that use data from API for showing results.'},{title: 'Calculator for small Calculations', link: 'https://calculatorfromshiivu.netlify.app/', working:'It is a Calculator, that can perform small calculations. Please enter values carefully.'},]
+    (async()=>{
+      const val = await fetch(import.meta.env.VITE_API)
+      const jsondata = await val.json()
+      await setdata(jsondata)
+    })()
+  },[])
+    
+  //These Variables is use for showing projects, skills and about of mine.
+  const skills = data.skills, about = data.about, projects = data.projects
 
-  //This Variable is use for showing skills.
-  const skills = ["HTML:5","CSS","Javascript","ReactJS","Redux","React-Router","C Programing Language", "MySQL", "Tailwind CSS", "NodeJS"]
-  
+  //Variables for Environment Variable
+  const linkedin_url = import.meta.env.VITE_LINKEDIN_URL, mail_with_body = import.meta.env.VITE_MAIL_WITH_BODY
+
   return (
     <div className=" text-gray-800">
       {/* Navbar */}
@@ -28,7 +38,6 @@ function App() {
         <div className="min-sm:mx-[5%]">
           <div >
             <h2 className="text-4xl font-bold mb-4 max-sm:max-w-[100vw] sm:max-w-[50vw]">Hi Visitor, I'm Shivam Kumar</h2>
-            <p className="text-lg text-gray-700 mb-6 ">I’m a Front-end Web developer passionate about building responsive and modern web apps.</p>
             <a href="#projects" className="bg-blue-600 text-white px-5 py-3 rounded-xl hover:bg-blue-700 duration-200">See My Work</a>
           </div>
         </div>
@@ -38,15 +47,15 @@ function App() {
       <section id="about" className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-3xl font-semibold mb-4">About Me</h3>
-          <p className="text-gray-600 text-lg">
-            I’m a developer with experience in React, Tailwind CSS, Javascript. I enjoy turning ideas into real products and solving real-world problems through code.
+          <p className="text-gray-600 text-lg ">
+            {about}
           </p>
         </div>
         <div className='max-w-4xl mx-auto text-center mt-8'>
           <h3 className="text-3xl font-semibold mb-4">Skills</h3>
           <ol className='inline-flex flex-col flex-wrap'>
-            {skills.map(skill => (
-              <li className='min-w-[10vw] hover:scale-110 duration-200 text-gray-600' key={skill}>{skill}</li>
+            {skills && skills.map(skill => (
+              <li className='min-w-[10vw] hover:scale-110 duration-200 text-gray-600' key={skills.indexOf(skill)}>{skill}</li>
             ))}
           </ol>
         </div>
@@ -57,15 +66,15 @@ function App() {
         <div className="justify-center w-[100%]">
           <h3 className="w-[100%] text-3xl font-semibold text-center mb-10">Projects</h3>
           <div className="flex justify-center flex-wrap ">
-            {projectLinks.map(i => (
-              <div key={i} className="bg-white rounded-xl shadow-md p-5 max-sm:w-[75%] min-sm:w-[30%] m-[2vw] hover:scale-105 duration-150">
+            {projects && projects.map(project => (
+              <div key={projects.indexOf(project)} className="bg-white rounded-xl shadow-md p-5 max-sm:w-[75%] min-sm:w-[30%] m-[2vw] hover:scale-105 duration-150">
                 <h4 className="text-xl">Title:</h4>
-                <p className="text-xl text-gray-600">{i.title}</p>
+                <p className="text-xl text-gray-600">{project.title}</p>
                 <hr />
-                <p className="text-gray-600 my-4">{i.working}</p>
+                <p className="text-gray-600 my-4">{project.working}</p>
                 <p className="text-gray-600 text-sm mt-[2vh]">
                   <b>Link : </b>
-                  <a href={i.link} className='hover:text-green-700 duration-150 ' target='_blank'>Want to visit???</a>
+                  <a href={project.link} className='hover:text-green-700 duration-150 ' target='_blank'>Want to visit???</a>
                 </p>
               </div>
             ))}
@@ -80,11 +89,11 @@ function App() {
           <h3 className="text-3xl font-semibold mb-4">Get in Touch</h3>
           <p className="text-gray-600 mb-6">Interested in working together or just ask something?</p>
           <div>
-            <a href='https://www.linkedin.com/in/shivam-kumar-5b4223357' target='_blank' className=" bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 duration-150">Visit on LinkedIn</a>
+            <a href={linkedin_url} target='_blank' className=" bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 duration-150">Visit on LinkedIn</a>
           </div>
           <p className="text-gray-600 my-[2vw]">Or</p>
           <div className=''>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shiivuishere@gmail.com&su=Hello%20Shivam,&body=I%20have%20a%20work%20for%20you," target='_blank' className=" bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 duration-150">Email Me</a>
+          <a href={mail_with_body} target='_blank' className=" bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 duration-150">Email Me</a>
           </div>
         </div>
       </section>
